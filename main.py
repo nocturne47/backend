@@ -9,7 +9,7 @@ app = FastAPI()
 app.add_middleware(
     app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://ferdinandport.vercel.app/"],  # sesuaikan
+    allow_origins=["*"],  # sesuaikan
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
