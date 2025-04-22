@@ -7,11 +7,13 @@ from fastapi.responses import FileResponse
 app = FastAPI()
 
 app.add_middleware(
+    app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["https://ferdinandport.vercel.app/", "http://localhost:5173"],  # sesuaikan
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+)
 )
 
 class ContactForm(BaseModel):
