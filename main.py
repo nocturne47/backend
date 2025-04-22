@@ -22,14 +22,14 @@ class ContactForm(BaseModel):
 @app.post("/submit")
 async def submit_form(data: ContactForm):
     try:
-        wb = load_workbook("contacts.xlsx")
+        wb = load_workbook("./contacts.xlsx")
         ws = wb.active
         ws.append([data.name, data.email, data.message])
-        wb.save("contacts.xlsx")
+        wb.save("./contacts.xlsx")
         return {"message": "Pesan berhasil dikirim ✅"}
     except Exception as e:
         return {"message": f"Gagal menyimpan pesan: {e}"}
 
 @app.get("/download")
 def download_excel():
-    return FileResponse("contacts.xlsx", media_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', filename="contacts.xlsx")
+    return FileResponse("./contacts.xlsx", media_type='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', filename="contacts.xlsx")
