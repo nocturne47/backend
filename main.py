@@ -8,7 +8,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://ferdinandport.vercel.app"],  # sesuaikan
+    allow_origins=["https://ferdinandport.vercel.app/#Contact.jsx"],  # sesuaikan
     allow_credentials=True,
     allow_methods=["POST", "GET", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["Content-Type", "Authorization"],
