@@ -11,7 +11,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["https://ferdinandport.vercel.app/"],  # sesuaikan
     allow_credentials=True,
-    allow_methods=["POST, GET"],
+    allow_methods=["POST, GET, PUT, DELETE, OPTIONS"],
     allow_headers=["*"],
 )
 )
